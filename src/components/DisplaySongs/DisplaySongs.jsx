@@ -4,21 +4,21 @@ import './DisplaySongs.css';
 const DisplaySongs = (props) => {
 
     return (  
-        
-                <table  size="lg">
-                <thead>
+            <div >
+                <table className="row-center" size="lg">
+                <thead style={{border: "3px solid rgb(0, 0, 0)"}} >
                     <tr>
-                        <th>Artist</th>
-                        <th>Title</th>
-                        <th>Album</th>
-                        <th>Genre</th>
-                        <th>Likes</th>
-                        <th>Release Date</th>
+                        <th>ARTIST</th>
+                        <th>TITLE</th>
+                        <th>ALBUM</th>
+                        <th>GENRE</th>
+                        <th>LIKES</th>
+                        <th>RELEASE DATE</th>
                     </tr>
                 </thead>
                
                     {props.songs.map(item=>(
-                    <tr key= {item.song_id}>
+                    <tr style={{border: "2px solid rgb(0, 0, 0)"}}  key= {item.song_id}>
                         <td>{item.artist} </td>
                         <td>{item.title}</td>
                         <td>{item.album}</td>
@@ -27,10 +27,8 @@ const DisplaySongs = (props) => {
                         <td>{item.release_date}</td>
                     </tr>
                     ))}
-               
-              
-            </table>
- 
+                 </table>
+            </div>
     );
 }
  

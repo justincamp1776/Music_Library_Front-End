@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import './App.css'
-import DisplaySongs from './components/DisplaySongs/DisplaySongs';
 import TitleBar from './components/TitleBar/TitleBar';
+import TableViewer from './components/TableViewer/TableViewer';
 
 class App extends Component {
     constructor(props) {
@@ -31,13 +31,10 @@ class App extends Component {
     render() { 
         return (  
             <div className="container-fluid">
-                <div className="row">
-                    <div className="col-md-12">
-                    <TitleBar />
-                    <DisplaySongs songs = {this.state.songs}/>
-                    </div>
-                </div>
+                <TitleBar />
+                <TableViewer songs={this.state.songs}/>
             </div>
+
         );
     }
 }

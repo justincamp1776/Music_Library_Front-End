@@ -4,9 +4,9 @@ import './TitleBar.css'
 
 const TitleBar = () => {
     return (  
-        <div >
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" href="#">Logo</a>
+        <div className="bottom">
+            <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+            <a className="navbar-brand" style={{paddingLeft: "900px"}} href="#">Tunester</a>
             </nav> 
         </div>
     );
