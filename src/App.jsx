@@ -4,6 +4,8 @@ import './App.css'
 import TitleBar from './components/TitleBar/TitleBar';
 import TableViewer from './components/TableViewer/TableViewer';
 import CreateSong from './components/CreateSong/CreateSong';
+import SearchBar from './components/SearchBar/SearchBar';
+
 
 class App extends Component {
     constructor(props) {
@@ -39,6 +41,14 @@ class App extends Component {
         return response.status
     }
 
+    handleSearch = (keyWord) =>{
+        let newList = this.state.songs.filter(song.namekeyWord)
+        this.setState({
+            songs : newList
+        })
+
+    }
+
 
 
 
@@ -46,6 +56,7 @@ class App extends Component {
         return (  
             <div className="container-fluid">
                 <TitleBar />
+                <SearchBar handleSearch={this.handleSearch}/>
                 <TableViewer songs={this.state.songs} deleteSong={this.deleteSong}/>
                 <CreateSong postSong={this.postSong}/>
             </div>
