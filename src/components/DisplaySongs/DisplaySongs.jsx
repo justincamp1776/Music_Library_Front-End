@@ -3,6 +3,9 @@ import './DisplaySongs.css';
 
 const DisplaySongs = (props) => {
 
+
+
+
     return (  
             <div >
                 <table className="row-center" size="lg">
@@ -25,6 +28,7 @@ const DisplaySongs = (props) => {
                         <td>{item.genre}</td>
                         <td>{item.likes}</td>
                         <td>{item.release_date}</td>
+                        <td><button onClick={()=>props.deleteSong(item.id)}>Delete</button></td>
                     </tr>
                     ))}
                  </table>
