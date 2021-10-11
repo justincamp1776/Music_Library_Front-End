@@ -3,6 +3,11 @@ To Do:
 
 1. Clear Form After Adding Song to the DB.
 
-2. Filter DB using a keyword/s.
+
 
 3. Add Header Picture.
+
+
+HTML Dialogue Tag. In <div> within Display Songs
+
+Use Boolean: Open/ or Show

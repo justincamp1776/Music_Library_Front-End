@@ -48,7 +48,7 @@ class CreateSong extends Component {
                                 <input style={{marginRight: '100px'}}name="release_date" onChange={this.handleChange} value={this.state.release_date}/><br/>
                                 <label style={{marginRight: '56px'}} >GENRE</label>
                                 <input name="genre" onChange={this.handleChange} value={this.state.genre}/><br/>
-                                <button style={{paddingRight: '235px', textAlign: "center"}}  type='Submit'>Add Song</button>
+                                <button  class="btn btn-secondary btn-lg btn-block"  style={{marginLeft: '5px', paddingRight: "110px",paddingLeft: "110px" }}  type='Submit'>Add Song</button>
                             </form>
                         </div>
                     </div>

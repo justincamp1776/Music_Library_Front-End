@@ -1,5 +1,9 @@
 import React from 'react';
 import './DisplaySongs.css';
+import UpdateSong from '../UpdateSong/UpdateSong'
+
+
+
 
 const DisplaySongs = (props) => {
 
@@ -29,10 +33,12 @@ const DisplaySongs = (props) => {
                         <td>{item.genre}</td>
                         <td>{item.likes}</td>
                         <td>{item.release_date}</td>
-                        <td><button onClick={()=>props.deleteSong(item.id)}>Delete</button></td>
+                        <td><button class="btn btn-outline-info">Update</button></td>
+                        <td><button  class="btn btn-outline-danger" onClick={()=>props.deleteSong(item.id)}>Delete</button></td>
                     </tr>
                     ))}
                  </table>
+                <UpdateSong song_to_update={props.item} updateSong={props.updateSong}/>
             </div>
     );
 }

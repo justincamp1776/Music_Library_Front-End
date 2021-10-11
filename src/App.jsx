@@ -41,6 +41,10 @@ class App extends Component {
         return response.status
     }
 
+    updateSong = async (songId) =>{
+        
+    }
+
     handleSearch = (keyWord) =>{
         let finalList=[]
         let filteredSong = this.state.songs.filter(function(song){
@@ -49,7 +53,6 @@ class App extends Component {
                 finalList.push(song);
             };
         })
-
         this.setState({
             songs : finalList
         })
@@ -66,7 +69,7 @@ class App extends Component {
                 <SearchBar handleSearch={this.handleSearch} songs={this.state.songs} getAllSongs={this.getAllSongs} />
                
                
-                <TableViewer songs={this.state.songs} deleteSong={this.deleteSong}/>
+                <TableViewer songs={this.state.songs} deleteSong={this.deleteSong} updateSong={this.updateSong}/>
                 
                
                 <CreateSong postSong={this.postSong}/>

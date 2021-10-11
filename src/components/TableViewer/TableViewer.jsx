@@ -6,7 +6,7 @@ const TableViewer = (props) => {
         <div className="row ">
             <div className="col-md-12">
                 <div className="row-center">
-                    <DisplaySongs songs={props.songs} deleteSong={props.deleteSong}/>
+                    <DisplaySongs songs={props.songs} deleteSong={props.deleteSong} updateSong={props.updateSong}/>
                 </div>
                 
             </div>
