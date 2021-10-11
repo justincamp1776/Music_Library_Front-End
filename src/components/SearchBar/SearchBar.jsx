@@ -6,37 +6,43 @@ class SearchBar extends Component {
     constructor(props) {
         super(props);
         this.state = { 
-            value : ''
+            query : '',
          }
     }
 
 
     handleChange =(event) =>{
         this.setState({
-            [event.target.keyWord] : event.target.value
+            [event.target.name] : event.target.value
         })
     }
 
     handleSubmit = (event) =>{
         event.preventDefault();
-        this.props.handleSearch(this.state.value)
+        this.props.handleSearch(this.state.query)
     }
 
+    handleOnClick = (event) =>{
+        event.preventDefault();
+        this.props.getAllSongs()
+    }
 
     render() { 
+        
         return (  
-            <form onSubmit={this.handleSubmit}action="/" method="get">
-            <label htmlFor="header-search">
-                <span className="visually-hidden">Search Songs</span>
-            </label>
-            <input
-                type="text"
-                onChange={this.handleChange}
-                id="header-search"
-                placeholder="Search Your Favorite Songs"
-                name="keyWord" />
-            <button type="submit">Search</button>
-        </form>
+            <div className="row">
+                <div className="col-md-12">
+                    <div className="search-bar">
+                        <form  onSubmit={this.handleSubmit}action="/" method="get">
+                            <label htmlFor="header-search"><span className="visually-hidden">Search Songs</span></label>
+                            <input type="text" onChange={this.handleChange} value={this.state.query}
+                                id="header-search" placeholder="Search Your Favorite Songs" name="query" />
+                            <button type="submit">Search</button>
+                            <button onClick={this.handleOnClick}>View All</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         );
     }
 }

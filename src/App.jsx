@@ -5,6 +5,7 @@ import TitleBar from './components/TitleBar/TitleBar';
 import TableViewer from './components/TableViewer/TableViewer';
 import CreateSong from './components/CreateSong/CreateSong';
 import SearchBar from './components/SearchBar/SearchBar';
+import Header from './components/Header/Header';
 
 
 class App extends Component {
@@ -33,7 +34,6 @@ class App extends Component {
         this.getAllSongs()
         return response.status
     }
-
     postSong = async (newSong) =>{
         console.log(newSong.title)
         let response = await axios.post('http://127.0.0.1:8000/music/', newSong)
@@ -42,12 +42,18 @@ class App extends Component {
     }
 
     handleSearch = (keyWord) =>{
-        let newList = this.state.songs.filter(song.namekeyWord)
-        this.setState({
-            songs : newList
-        })
+        let finalList=[]
+        let newList=this.state.songs.filter(song => song.title.toLowerCase().includes(keyWord.toLowerCase()))
+        if(newList != undefined){
+            finalList.push(newList)
+        }
+       
 
+        this.setState({
+            songs : finalList
+        })
     }
+
 
 
 
@@ -56,9 +62,20 @@ class App extends Component {
         return (  
             <div className="container-fluid">
                 <TitleBar />
-                <SearchBar handleSearch={this.handleSearch}/>
+                
+                <SearchBar handleSearch={this.handleSearch} songs={this.state.songs} getAllSongs={this.getAllSongs} />
+               
+               
                 <TableViewer songs={this.state.songs} deleteSong={this.deleteSong}/>
+                
+               
                 <CreateSong postSong={this.postSong}/>
+               
+                
+                
+                
+               
+                
             </div>
 
         );
