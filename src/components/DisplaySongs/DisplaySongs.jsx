@@ -10,7 +10,7 @@ const DisplaySongs = (props) => {
             <div >
                 
                 <table className="row-center" size="lg">
-                <thead style={{border: "3px solid rgb(0, 0, 0)"}} >
+                <thead style={{border: "3.5px solid rgb(0, 0, 0)"}} >
                     <tr>
                         <th>ARTIST</th>
                         <th>TITLE</th>
@@ -22,7 +22,7 @@ const DisplaySongs = (props) => {
                 </thead>
                
                     {props.songs.map(item=>(
-                    <tr style={{border: "2px solid rgb(0, 0, 0)"}}  key= {item.song_id}>
+                    <tr style={{border: "3px solid rgb(0, 0, 0)"}}  key= {item.song_id}>
                         <td>{item.artist} </td>
                         <td>{item.title}</td>
                         <td>{item.album}</td>

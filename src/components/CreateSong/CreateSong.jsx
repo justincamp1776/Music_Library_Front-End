@@ -35,6 +35,7 @@ class CreateSong extends Component {
             <div className="container-fluid">
                 <div className="row">
                     <div Classname="col-md-12">
+                       <div className="text"><span class="blinking"><strong> Add Your Favorite Song:</strong></span></div> 
                         <div className="form">
                             <form  style={{marginRight: '200px'}}  onSubmit={this.handleSumbit}>
                                 <label style={{marginRight: '68px'}} >TITLE</label>

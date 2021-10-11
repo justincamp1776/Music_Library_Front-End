@@ -5,6 +5,24 @@
    
     margin-left: 770px;
     margin-bottom: 300px;
-    border: 3px
+    border: 3px;
+
+}
+
+.text{
+  
+    text-align: center;
+    font-size: 20pt;
+    padding-bottom: 25px;
+
+}
+
+.blinking{
+    animation:blinkingText 2.5s infinite;
+}
+@keyframes blinkingText{
+    0%{     color: #37383d;    }
+    50%{    color: #37383d; }
+    100%{    color: transparent; }
 
 }

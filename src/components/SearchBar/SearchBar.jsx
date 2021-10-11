@@ -36,7 +36,7 @@ class SearchBar extends Component {
                         <form  onSubmit={this.handleSubmit}action="/" method="get">
                             <label htmlFor="header-search"><span className="visually-hidden">Search Songs</span></label>
                             <input type="text" onChange={this.handleChange} value={this.state.query}
-                                id="header-search" placeholder="Search Your Favorite Songs" name="query" />
+                                id="header-search" placeholder="title, artist, album, genre" name="query" />
                             <button type="submit">Search</button>
                             <button onClick={this.handleOnClick}>View All</button>
                         </form>
