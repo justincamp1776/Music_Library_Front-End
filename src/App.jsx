@@ -43,11 +43,12 @@ class App extends Component {
 
     handleSearch = (keyWord) =>{
         let finalList=[]
-        let newList=this.state.songs.filter(song => song.title.toLowerCase().includes(keyWord.toLowerCase()))
-        if(newList != undefined){
-            finalList.push(newList)
-        }
-       
+        let filteredSong = this.state.songs.filter(function(song){
+            if(song.title.toLowerCase() == keyWord.toLowerCase() || song.album.toLowerCase() == keyWord.toLowerCase() || song.artist.toLowerCase()
+             == keyWord.toLowerCase() || song.genre.toLowerCase() == keyWord.toLowerCase() || song.release_date.toString().toLowerCase() == keyWord.toLowerCase()){
+                finalList.push(song);
+            };
+        })
 
         this.setState({
             songs : finalList
@@ -57,10 +58,9 @@ class App extends Component {
 
 
 
-
     render() { 
         return (  
-            <div className="container-fluid">
+            <div className="container-fluid" style={{backgroundColor: "#eaf2f4"}}>
                 <TitleBar />
                 
                 <SearchBar handleSearch={this.handleSearch} songs={this.state.songs} getAllSongs={this.getAllSongs} />
