@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './CreateSong.css';
-import mic from '../../static/images/mic.png'
-import note from '../../static/images/note.png'
+
 
 
 class CreateSong extends Component {

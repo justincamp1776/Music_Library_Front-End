@@ -5,7 +5,7 @@ import TitleBar from './components/TitleBar/TitleBar';
 import TableViewer from './components/TableViewer/TableViewer';
 import CreateSong from './components/CreateSong/CreateSong';
 import SearchBar from './components/SearchBar/SearchBar';
-import Header from './components/Header/Header';
+
 
 
 class App extends Component {
@@ -16,7 +16,8 @@ class App extends Component {
         }
     }
 
-   
+
+
 
     componentDidMount(){
         this.getAllSongs();
@@ -41,9 +42,7 @@ class App extends Component {
         return response.status
     }
 
-    updateSong = async (songId) =>{
-        
-    }
+   
 
     handleSearch = (keyWord) =>{
         let finalList=[]
@@ -58,8 +57,7 @@ class App extends Component {
         })
     }
 
-
-
+   
 
     render() { 
         return (  
@@ -68,21 +66,13 @@ class App extends Component {
                 
                 <SearchBar handleSearch={this.handleSearch} songs={this.state.songs} getAllSongs={this.getAllSongs} />
                
-               
-                <TableViewer songs={this.state.songs} deleteSong={this.deleteSong} updateSong={this.updateSong}/>
+                <TableViewer songs={this.state.songs} deleteSong={this.deleteSong} />
                 
-               
                 <CreateSong postSong={this.postSong}/>
-               
-                
-                
-                
-               
-                
             </div>
 
         );
     }
 }
- 
+
 export default App;
