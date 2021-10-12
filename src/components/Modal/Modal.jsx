@@ -1,28 +1,27 @@
 import React from "react";
 
-
 const Modal = (props) => {
+
   return (
     <dialog
       open={props.show}
       id="Update Song"
       style={{ backgroundColor: "#A8A9AF" }}
     >
-      {console.log(props.artist)}
+      
       <form method="dialog">
         <label>Artist:</label>
-        <input name="artist" type="text" />
+        <input name="artist" type="text" value={props.songs.artist}/>
         <label>Title:</label>
-        <input name="title" type="text" />
+        <input name="title" type="text" value={props.songs.title}/>
         <label>Album:</label>
-        <input name="album" type="text" />
+        <input name="album" type="text" value={props.songs.album} />
         <label>Genre:</label>
-        <input name="genre" type="text" />
+        <input name="genre" type="text" value={props.songs.genre} />
         <label>Release Date:</label>
-        <input name="release_date" type="text" />
+        <input name="release_date" type="text" value={props.songs.title} />
 
-        <menu>
-          <button>Cancel</button>
+        <menu><button>Cancel</button>
           <button>Confirm</button>
         </menu>
       </form>
