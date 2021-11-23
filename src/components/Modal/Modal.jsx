@@ -9,7 +9,7 @@ const Modal = (props) => {
       style={{ backgroundColor: "#A8A9AF" }}
     >
       
-      <form method="dialog">
+      {/* <form method="dialog">
         <label>Artist:</label>
         <input name="artist" type="text" value={props.songs.artist}/>
         <label>Title:</label>
@@ -24,7 +24,7 @@ const Modal = (props) => {
         <menu><button>Cancel</button>
           <button>Confirm</button>
         </menu>
-      </form>
+      </form> */}
     </dialog>
   );
 };

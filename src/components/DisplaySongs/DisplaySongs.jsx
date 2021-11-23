@@ -3,14 +3,8 @@ import "./DisplaySongs.css";
 import Modal from "../Modal/Modal";
 
 export default function DisplaySongs(props) {
-  const [show, setShow] = useState(false);
-  const [record, setRecord] = useState();
 
-  const setShowFunction = (song) => {
-    console.log(song);
-    setShow(!show);
-    setRecord(song);
-  };
+
 
   return (
     <div>
@@ -37,7 +31,7 @@ export default function DisplaySongs(props) {
             <td>
               <button
                 class="btn btn-outline-info"
-                onClick={() => setShowFunction(item)}
+               
               >
                 Update
               </button>
@@ -53,9 +47,9 @@ export default function DisplaySongs(props) {
           </tr>
         ))}
       </table>
-      {console.log(record)}
+     
         
-        <Modal show={show} setShow={setShowFunction} songs={record}/>
+       
       
 
       {/* or props.item or individual fields such as item.artist etc. */}
